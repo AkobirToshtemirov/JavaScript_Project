@@ -37,6 +37,19 @@ function rememberMySeries() {
 
 rememberMySeries();
 
+function writeGenres() {
+  for (let i = 0; i < 3; i++) {
+    const genres = prompt((i + 1) + " Write your favourite ganre: ")
+    if (genres != null && genres != "") {
+      seriesDB.genres[i] = genres;
+    } else {
+      i--;
+    }
+  }
+}
+
+writeGenres();
+
 function showDB() {
   const confirmation = confirm("Do you want to see DB?");
   seriesDB.private = confirmation;
