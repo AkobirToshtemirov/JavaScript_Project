@@ -20,13 +20,13 @@ let seriesDB = {
   private: false
 }
 
-function rememberMySeries() {
+function rememberMySeries(series) {
   for (let i = 0; i < 2; i++) {
     const lastMovie = prompt((i + 1) + " The last movie you watched: ");
     const grade = +prompt((i + 1) + " Yuour grade for that movie (1/10): ");
 
     if (lastMovie != null && lastMovie != "" && grade != null && grade != "" && !isNaN(grade)) {
-      seriesDB.series[lastMovie] = grade;
+      series[lastMovie] = grade;
       console.log("Done");
     } else {
       console.log("Error");
@@ -35,29 +35,29 @@ function rememberMySeries() {
   }
 }
 
-rememberMySeries();
+rememberMySeries(seriesDB.series);
 
-function writeGenres() {
+function writeGenres(genre) {
   for (let i = 0; i < 3; i++) {
     const genres = prompt((i + 1) + " Write your favourite ganre: ")
     if (genres != null && genres != "") {
-      seriesDB.genres[i] = genres;
+      genre[i] = genres;
     } else {
       i--;
     }
   }
 }
 
-writeGenres();
+writeGenres(seriesDB.genres);
 
-function showDB() {
+function showDB(hidden) {
   const confirmation = confirm("Do you want to see DB?");
-  seriesDB.private = confirmation;
-  if (seriesDB.private) {
+  hidden = confirmation;
+  if (hidden) {
     console.log(seriesDB);
   } else {
     console.log("Information will not be displayed!");
   }
 }
 
-showDB();
+showDB(seriesDB.private);
