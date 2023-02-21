@@ -16,6 +16,12 @@ class Car {
   }
 }
 
+// extends means this class is a child of another class
+
+class Spark extends Car {
+
+}
+
 const mers = new Car('S500', 'red', 1000);
 console.log(mers);
 console.log(mers.calcSpeed());
