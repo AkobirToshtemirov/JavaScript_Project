@@ -10,7 +10,7 @@
   background-color: rgb(230, 251, 136);
 }
 
-.btn {
+button {
   width: 150px;
   height: 45px;
   border-radius: 10px;
@@ -20,6 +20,10 @@
   cursor: pointer;
 }
 
-.blue__btn {
+.blue {
   background-color: rgb(81, 17, 255);
+}
+
+.red {
+  background-color: rgb(255, 41, 41); 
 }
