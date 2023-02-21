@@ -7,7 +7,13 @@ btnMain.addEventListener('click', (event) => {
   //   console.log("btn is clicked");
   // }
 
-  if(event.target && event.target.contains()) {
-    console.log("btn is clicked");
+  if(event.target && event.target.classList.contains('blue__btn')) {
+    console.log("Blue btn is clicked");
   }
+})
+
+const btns = document.querySelectorAll('.btns');
+
+btns.forEach(item => {
+  
 })
