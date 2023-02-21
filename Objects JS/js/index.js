@@ -25,13 +25,13 @@ console.log(person);
 // forin loops through the object properties
 let count = 0;
 for (const key in person) {
-  // if(typeof person[key] === "object") {
-  //   for (const i in person[key]) {
-  //     console.log(`Property ${i} has value ${person[key][i]}`);
-  //   }
-  // } else {
-  //     console.log(`Property ${key} has value ${person[key]}`);
-  // }
+  if (typeof person[key] === "object") {
+    for (const i in person[key]) {
+      console.log(`Property ${i} has value ${person[key][i]}`);
+    }
+  } else {
+    console.log(`Property ${key} has value ${person[key]}`);
+  }
   count++;
 }
 
