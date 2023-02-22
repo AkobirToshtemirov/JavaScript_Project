@@ -1,22 +1,36 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-  const tabParent = document.querySelector('.tabheader__items');
+  const tabsParent = document.querySelector('.tabheader__items');
   const tabs = document.querySelectorAll('.tabheader__item');
-  const tabContent = document.querySelectorAll('.tabcontent');
+  const tabsContent = document.querySelectorAll('.tabcontent');
 
   function hideTabContent() {
-    tabContent.forEach(item => {
+    tabsContent.forEach(item => {
       item.style.display = "none";
     });
+ 
     tabs.forEach(item => {
-      item.style.display = "none";
+      item.classList.remove('tabheader__item_active');
     })
   }
 
-  hideTabContent();
-
-  function showTabContent() {
-
+  function showTabContent(index = 0) {
+    tabsContent[index].style.display = 'block';
+    tabs[index].classList.add('tabheader__item_active');
   }
 
+  hideTabContent();
+  showTabContent();
+
+  tabsParent.addEventListener('click', (event) => {
+    const target = event.target;
+    if(target && target.classList.contains('tabheader__item')) {
+      tabs.forEach((item, idx) => {
+        if(target == item) {
+          hideTabContent();
+          showTabContent(idx);        
+        }
+      })
+    }
+  })
 })
