@@ -654,6 +654,28 @@ section {
   animation: shake3 1000ms -900ms ease-in-out infinite;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.fade {
+  animation: fade 1.5s;
+}
+
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes shake1 {
   0% {
     transform: rotateX(80deg);
