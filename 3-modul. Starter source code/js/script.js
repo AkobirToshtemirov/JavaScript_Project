@@ -55,11 +55,19 @@ window.addEventListener("DOMContentLoaded", () => {
   // parse gets date in millisecunds
 
   function getTimeRemaing(endTime) {
-    const timer = Date.parse(endTime) - Date.parse(new Date()),
-      days = Math.floor(timer / (1000 * 60 * 60 * 24)),
-      hours = Math.floor((timer / (1000 * 60 * 60)) % 24),
-      minutes = Math.floor((timer / (1000 * 60)) % 60),
+    let days, hours, minutes, seconds;
+    const timer = Date.parse(endTime) - Date.parse(new Date());
+    if (timer <= 0) {
+      days = 0;
+      hours = 0;
+      minutes = 0;
+      seconds = 0;
+    } else {
+      days = Math.floor(timer / (1000 * 60 * 60 * 24));
+      hours = Math.floor((timer / (1000 * 60 * 60)) % 24);
+      minutes = Math.floor((timer / (1000 * 60)) % 60);
       seconds = Math.floor((timer / 1000) % 60);
+    }
 
     return { timer, days, hours, minutes, seconds }
   }
