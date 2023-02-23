@@ -22,3 +22,10 @@ btn.addEventListener('click', () => {
 
 const style = getComputedStyle(box);
 console.log(style);
+
+console.log(document.documentElement.clientWidth);
+
+// clientWidth important
+// scrollHeight important
+
+// window & document
